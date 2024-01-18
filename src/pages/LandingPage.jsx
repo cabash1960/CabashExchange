@@ -8,7 +8,7 @@ import Testimonial from "../Components/Testimonial";
 
 const LandingPage = () => {
   return (
-    <div>
+    <div className="font-poppins"> 
       <div className="bg-gray-950">
         <Hero />
       </div>
