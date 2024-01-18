@@ -29,7 +29,7 @@ const Solutions = () => {
     <div className="lg:mx-64 mx-4 lg:py-20 py-10">
       <div className="text-center">
         <p className="text-lg text-orange-500 font-medium">Solutions </p>
-        <h2 className="lg:text-3xl text-xl font-bold lg:leading-tight text-slate-900">
+        <h2 className="lg:text-3xl text-xl font-bold lg:leading-tight text-slate-300">
           SERVICES WE PROVIDE
         </h2>
       </div>

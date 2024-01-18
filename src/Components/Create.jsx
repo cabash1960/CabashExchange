@@ -1,76 +1,43 @@
-// src/components/FeatureComponent.js
 import React from "react";
 
-const FeatureComponent = () => {
+const Create = () => {
   return (
-    <div className="flex py-20 items-center justify-center mt-8">
-      {/* Feature 2 */}
-      <div className="relative mt-8">
-        <div className="flex items-center">
-          <div className="flex-shrink-0">
-            <div className="h-12 w-12 bg-green-500 text-white flex items-center justify-center rounded-full">
-              2
-            </div>
-          </div>
-          <div className="ml-4">
-            <div className="text-lg font-medium text-gray-800">Feature 2</div>
-            <div className="text-sm text-gray-600">
-              Description for feature 2
-            </div>
-          </div>
-        </div>
-        <div className="absolute top-1/2 right-0 transform translate-x-1/2 -mt-1">
-          <div className="h-5 w-5 bg-green-500 rounded-full"></div>
-        </div>
+    <div className="flex flex-col items-center lg:py-20 py-10 lg:px-0 px-5">
+      <h2 className="text-3xl font-semibold mb-8 text-gray-300">
+        START SENDING MONEY IN THREE SIMPLE WAYS
+      </h2>
+
+      {/* Step 1: Create Account */}
+      <div className="mb-8">
+        <h3 className="text-xl font-semibold mb-4 text-orange-400">1. Create Account</h3>
+        <p className="text-slate-400">
+          Provide your credentials, create your own account, and explore.
+          Creating an account is so easy.
+        </p>
       </div>
 
-      {/* Dotted Line between Feature 2 and Feature 1 */}
-      <div className="flex-1 border-t-2 border-dotted border-gray-400 mx-4 mt-8"></div>
-
-      {/* Feature 1 */}
-      <div className="relative">
-        <div className="flex items-center">
-          <div className="flex-shrink-0">
-            <div className="h-12 w-12 bg-blue-500 text-white flex items-center justify-center rounded-full">
-              1
-            </div>
-          </div>
-          <div className="ml-4">
-            <div className="text-lg font-medium text-gray-800">Feature 1</div>
-            <div className="text-sm text-gray-600">
-              Description for feature 1
-            </div>
-          </div>
-        </div>
-        <div className="absolute top-1/2 left-0 transform -translate-x-1/2 -mt-1">
-          <div className="h-5 w-5 bg-blue-500 rounded-full"></div>
-        </div>
+      {/* Step 2: Fund Your Wallet */}
+      <div className="mb-8">
+        <h3 className="text-xl font-semibold mb-4 text-orange-400">2. Fund Your Wallet</h3>
+        <p className="text-slate-400">
+          Send or request any amount to your preferred one within seconds. Just
+          search the desired one and send or request for money.
+        </p>
       </div>
 
-      {/* Dotted Line between Feature 1 and Feature 3 */}
-      <div className="flex-1 border-t-2 border-dotted border-gray-400 mx-4"></div>
-
-      {/* Feature 3 */}
-      <div className="relative">
-        <div className="flex items-center">
-          <div className="flex-shrink-0">
-            <div className="h-12 w-12 bg-yellow-500 text-white flex items-center justify-center rounded-full">
-              3
-            </div>
-          </div>
-          <div className="ml-4">
-            <div className="text-lg font-medium text-gray-800">Feature 3</div>
-            <div className="text-sm text-gray-600">
-              Description for feature 3
-            </div>
-          </div>
-        </div>
-        <div className="absolute top-1/2 right-0 transform translate-x-1/2 -mt-1">
-          <div className="h-5 w-5 bg-yellow-500 rounded-full"></div>
-        </div>
+      {/* Step 3: Input the Receiver's Details */}
+      <div>
+        <h3 className="text-xl font-semibold mb-4 text-orange-400">
+          3. Input the Receiver's Details
+        </h3>
+        <p className="text-slate-400">
+          Providing the details of the receipt. Select the payment channel -
+          mobile wallet or local bank account. Click on SEND and wait for us to
+          do our magic.
+        </p>
       </div>
     </div>
   );
 };
 
-export default FeatureComponent;
+export default Create;

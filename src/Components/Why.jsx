@@ -9,24 +9,28 @@ const Why = () => {
       title: "Low Cost",
       content:
         "A built-in system with the lowest possible cost that energizes customers to grab it.",
+      section: "b",
     },
     {
-      icon: "process",
-      title: "Easy Process",
-      content:
+        icon: "process",
+        title: "Easy Process",
+        content:
         "Easily processable and maintainable system that allows you to process and track records.",
+        section: "b",
     },
     {
-      icon: "fast",
-      title: "Faster Payments",
-      content:
+        icon: "fast",
+        title: "Faster Payments",
+        content:
         "Make payments from one corner of the world to another in just a few seconds. Making payments is very easy and fast.",
+        section: "b",
     },
     {
-      icon: "secure",
-      title: "Secure & Safe",
-      content:
+        icon: "secure",
+        title: "Secure & Safe",
+        content:
         "Customer data security is the first priority. Make your transactions safe, sound, and secure.",
+        section: "b",
     },
   ];
 
@@ -34,7 +38,7 @@ const Why = () => {
     <div className="lg:mx-40 mx-4 lg:py-20 py-10">
       <div className="text-center">
         <p className="text-lg text-orange-500 font-medium">Our Benefits</p>
-        <h2 className="lg:text-3xl text-xl font-bold lg:leading-tight text-slate-900">
+        <h2 className="lg:text-3xl text-xl font-bold lg:leading-tight text-slate-300">
           REASONS TO CHOOSE US
         </h2>
       </div>

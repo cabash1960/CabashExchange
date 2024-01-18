@@ -11,18 +11,18 @@ const Hero = () => {
             The safest and reliable African payment platform
           </p>
         </div>
-        <h2 className="lg:text-6xl text-3xl   md:text-5xl font-bold text-slate-900">
+        <h2 className="lg:text-6xl text-3xl   md:text-5xl font-bold text-slate-200">
           Cabash is a Pan-African payment platform
         </h2>
         <div>
-          <h4 className="text-sm text-gray-700 lg:pr-20 mb-1">
+          <h4 className="text-sm text-slate-400 lg:pr-20 mb-1">
             for a fast, ,safe and convenient means for individuals and
             businesses to send and receive money across Africa and in their
             favourite currencies.
           </h4>
           <p className="text-md text-blue-600 font-medium">
             Convert your currency with ease
-          </p>
+          </p> 
         </div>
         <div>
           <Button text="Get Started" variant="primary" />

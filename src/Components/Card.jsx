@@ -28,7 +28,7 @@ const Card = ({ icon, title, content, isColumnLayout }) => {
 
   return (
     <div
-      className={`bg-slate-500 shadow-lg rounded-md px-6 py-4 mb-4 ${layoutClass}`}
+      className={`bg-slate-800 text-slate-400 shadow-lg rounded-md p-6 mb-4 ${layoutClass}`}
     >
       <div className={`flex items-center mb-3 ${layoutClass}`}>
         <div
@@ -39,14 +39,14 @@ const Card = ({ icon, title, content, isColumnLayout }) => {
           {icons[icon]}
         </div>
         <h3
-          className={`text-lg font-bold text-gray-100 ${
+          className={`text-lg font-bold text-slate-300 ${
             isColumnLayout ? "text-left" : ""
           }`}
         >
           {title}
         </h3>
       </div>
-      <div className="text-gray-200 text-sm leading-5">
+      <div className="text-slate-400 text-sm leading-5">
         <p>{content}</p>
       </div>
     </div>
