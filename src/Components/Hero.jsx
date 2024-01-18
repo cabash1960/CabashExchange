@@ -8,11 +8,11 @@ const Hero = () => {
       <div className="flex flex-col gap-6">
         <div className="rounded-full bg-blue-300 lg:pl-8 py-2 px-3 lg:w-9/12 w-5/6 md:w-2/5">
           <p className="text-sm text-gray-900">
-            The safest and reliable African payment platform
+            The safest and reliable A payment platform
           </p>
         </div>
         <h2 className="lg:text-6xl text-3xl   md:text-5xl font-bold text-slate-200">
-          Cabash is a Pan-African payment platform
+          Cabash Exchange is a Pan-African payment platform
         </h2>
         <div>
           <h4 className="text-sm text-slate-400 lg:pr-20 mb-1">
@@ -22,7 +22,7 @@ const Hero = () => {
           </h4>
           <p className="text-md text-blue-600 font-medium">
             Convert your currency with ease
-          </p> 
+          </p>
         </div>
         <div>
           <Button text="Get Started" variant="primary" />
