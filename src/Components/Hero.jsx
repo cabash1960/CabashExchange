@@ -20,7 +20,7 @@ const Hero = () => {
             businesses to send and receive money across Africa and in their
             favourite currencies.
           </h4>
-          <p className="text-md text-blue-600 font-medium">
+          <p className="text-md text-orange-400 font-medium">
             Convert your currency with ease
           </p>
         </div>
