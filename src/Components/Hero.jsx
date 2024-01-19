@@ -6,16 +6,16 @@ const Hero = () => {
   return (
     <div className="container mx-4 lg:mx-12 lg:pt-20 py-10 grid lg:grid-cols-2 gap-16">
       <div className="flex flex-col gap-6">
-        <div className="rounded-full bg-blue-300 lg:pl-8 py-2 px-3 lg:w-9/12 w-5/6 md:w-2/5">
+        <div className="rounded-full bg-blue-300 lg:pl-8 py-2 px-3 lg:w-8/12 w-5/6 md:w-2/5">
           <p className="text-sm text-gray-900">
-            The safest and reliable A payment platform
+            The safest and reliable Africa payment platform
           </p>
         </div>
-        <h2 className="lg:text-6xl text-3xl   md:text-5xl font-bold text-slate-200">
+        <h2 className="lg:text-6xl text-3xl leading-10 mb-3  md:text-5xl font-bold text-slate-200">
           Cabash Exchange is a Pan-African payment platform
         </h2>
         <div>
-          <h4 className="text-sm text-slate-400 lg:pr-20 mb-1">
+          <h4 className="text-sm text-slate-400 lg:pr-20 mb-4">
             for a fast, ,safe and convenient means for individuals and
             businesses to send and receive money across Africa and in their
             favourite currencies.
@@ -25,7 +25,7 @@ const Hero = () => {
           </p>
         </div>
         <div>
-          <Button text="Get Started" variant="primary" />
+          <Button text="Get Started" variant="primary" to="/SignUpForm"/>
         </div>
       </div>
       <div className="mt-[-40px] lg:w-full w-80">

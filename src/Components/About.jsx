@@ -39,10 +39,10 @@ const About = () => {
             <br /> Payment Solutions
           </h2>
           <div className="border-t-2 border-violet-700 w-1/3"></div>
-          <h3 className="text-lg font-medium text-gray-400 ">
+          <h3 className="text-lg font-medium text-slate-300 ">
             the secure, easiest and fastest money transfer.
           </h3>
-          <p className="text-[15px] text-gray-400 mb-4">
+          <p className="text-[15px] text-slate-400 mb-4">
             send, receive, deposit, request, invest, and exchange money globally
             in multiple currencies easily, quickly with great rates and low
             fees.

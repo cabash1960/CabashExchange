@@ -12,13 +12,13 @@ const LandingPage = () => {
       <div className="bg-gray-950">
         <Hero />
       </div>
-      <div className="bg-gray-900">
+      <div id="products" className="bg-gray-900">
         <About />
       </div>
-      <div className="bg-gray-950">
+      <div id="features" className="bg-gray-950">
         <Why />
       </div>
-      <div className="bg-gray-900">
+      <div id="solutions" className="bg-gray-900">
         <Solutions />
       </div>
       <div className="bg-gray-950">

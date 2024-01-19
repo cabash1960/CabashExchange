@@ -1,28 +1,85 @@
 import React from "react";
+import { Link } from "react-router-dom";
+import { Link as ScrollLink } from "react-scroll";
+import { FaFacebook, FaInstagram, FaTwitter, FaWhatsapp } from "react-icons/fa";
 import logoC from "../assets/logoc.png";
 
 const Footer = () => {
+  const openLinkInNewTab = (url) => {
+    window.open(url, "_blank");
+  };
+
   return (
-    <footer className="bg-slate-800 text-white ">
-      <div className="container mx-auto flex flex-wrap items-center justify-between py-8">
-        <div className="flex items-start flex-col w-1/3 gap-4">
+    <footer className="bg-slate-800 text-white">
+      <div className="container mx-5 grid lg:grid-cols-5 gap-3 items-center py-8">
+        <div className="flex col-span-2 items-start flex-col gap-4">
           <img src={logoC} alt="CABASH Logo" className="h-8" />
           <p className="text-sm text-slate-400">
             CABASH, a secured online payment gateway that allows payment in
             multiple currencies easily, safely and securely.
           </p>
         </div>
-        <div className="flex flex-col items-center space-x-4">
-          <h4 className="text-slate-300">Quick Links</h4>
-          <a href="/home" className="text-gray-400 hover:text-white">
-            Home
-          </a>
-          <a href="/developer" className="text-gray-400 hover:text-white">
-            Developer
-          </a>
+        <div className="flex col-span-2 flex-col items-center  gap-2">
+          <h3 className="font-medium text-slate-300">Quick Links</h3>
+          <ScrollLink
+            to="products"
+            spy={true}
+            smooth={true}
+            offset={-70}
+            duration={500}
+            className="text-slate-400 hover:text-white cursor-pointer"
+          >
+            Products
+          </ScrollLink>
+          <ScrollLink
+            to="features"
+            spy={true}
+            smooth={true}
+            offset={-70}
+            duration={500}
+            className="text-slate-400 hover:text-white cursor-pointer"
+          >
+            Features
+          </ScrollLink>
+          <ScrollLink
+            to="solutions"
+            spy={true}
+            smooth={true}
+            offset={-70}
+            duration={500}
+            className="text-slate-400 hover:text-white cursor-pointer"
+          >
+            Solutions
+          </ScrollLink>
         </div>
-        <div className="flex items-center space-x-4">
-          <h4 className="text-slate-300">Social Links</h4>
+        <div className="flex col-span-1 flex-col gap-3">
+          <h4 className="font-medium text-slate-300">Social Links</h4>
+          <div className="flex gap-3">
+          <FaFacebook
+            className="text-xl cursor-pointer text-white-950 hover:text-gray-70000"
+            onClick={() =>
+              openLinkInNewTab("https://facebook.com/")
+            }
+          />
+          <FaInstagram
+            className="text-xl cursor-pointer text-white-950 hover:text-gray-70000"
+            onClick={() =>
+              openLinkInNewTab("https://instagram.com/")
+            }
+          />
+          <FaTwitter
+            className="text-xl cursor-pointer text-white-950 hover:text-gray-70000"
+            onClick={() =>
+              openLinkInNewTab("https://twitter.com/")
+            }
+          />
+          <FaWhatsapp
+            className="text-xl cursor-pointer text-white-950 hover:text-gray-70000"
+            onClick={() =>
+              openLinkInNewTab("https://whatsapp.com/")
+            }
+            />
+            </div>
         </div>
       </div>
       <div className="bg-gray-950 text-center py-3">

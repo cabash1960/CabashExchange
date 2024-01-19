@@ -75,7 +75,7 @@ const Navbar = () => {
           } lg:flex lg:flex-row lg:gap-6 items-center lg:bg-transparent bg-black bg-opacity-50 flex-col navbar-container`}
         >
           <ScrollLink
-            to="product"
+            to="products"
             spy={true}
             smooth={true}
             offset={-70}
@@ -83,10 +83,10 @@ const Navbar = () => {
             className="text-gray-300 cursor-pointer"
             onClick={closeMenu}
           >
-            Product
+            Products
           </ScrollLink>
           <ScrollLink
-            to="feature"
+            to="features"
             spy={true}
             smooth={true}
             offset={-70}
@@ -94,10 +94,10 @@ const Navbar = () => {
             className="text-gray-300 cursor-pointer"
             onClick={closeMenu}
           >
-            Feature
+            Features
           </ScrollLink>
           <ScrollLink
-            to="contact"
+            to="solutions"
             spy={true}
             smooth={true}
             offset={-70}
@@ -105,7 +105,7 @@ const Navbar = () => {
             className="text-gray-300 cursor-pointer"
             onClick={closeMenu}
           >
-            Contact
+            Solutions
           </ScrollLink>
           <Button
             text="Login"

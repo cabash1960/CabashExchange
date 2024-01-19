@@ -16,7 +16,7 @@ const Button = ({
       case "secondary":
         return "bg-gray-500 text-white";
       case "success":
-        return "bg-green-500 text-white";
+        return "bg-violet-600 text-white";
       case "danger":
         return "bg-red-500 text-white";
       default:

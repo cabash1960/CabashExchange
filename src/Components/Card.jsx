@@ -46,7 +46,7 @@ const Card = ({ icon, title, content, isColumnLayout }) => {
           {title}
         </h3>
       </div>
-      <div className="text-slate-400 text-sm leading-5">
+      <div className="text-slate-400 text-sm leading-6">
         <p>{content}</p>
       </div>
     </div>
