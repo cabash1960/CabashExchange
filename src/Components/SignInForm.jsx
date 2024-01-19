@@ -120,8 +120,8 @@ const SignInForm = () => {
 
       {showForgotPasswordPopup && (
         <div className="fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 flex items-center justify-center">
-          <div className="bg-white p-6 rounded shadow-md">
-            <h2 className="text-2xl font-semibold mb-4">Forgot Password</h2>
+          <div className="bg-gray-600 p-6 rounded shadow-md">
+            <h2 className="text-2xl font-semibold mb-4 text-slate-300">Forgot Password</h2>
             <form onSubmit={handleForgotPasswordSubmit}>
               <FormInput
                 label="Email"
@@ -140,7 +140,7 @@ const SignInForm = () => {
             </form>
             <div className="mt-4">
               <p
-                className="text-blue-700 cursor-pointer"
+                className="text-orange-400 cursor-pointer"
                 onClick={handleCloseForgotPasswordPopup}
               >
                 Close
