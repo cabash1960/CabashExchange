@@ -55,31 +55,31 @@ const Footer = () => {
         <div className="flex col-span-1 flex-col gap-3">
           <h4 className="font-medium text-slate-300">Social Links</h4>
           <div className="flex gap-3">
-          <FaFacebook
-            className="text-xl cursor-pointer text-white-950 hover:text-gray-70000"
-            onClick={() =>
-              openLinkInNewTab("https://facebook.com/")
-            }
-          />
-          <FaInstagram
-            className="text-xl cursor-pointer text-white-950 hover:text-gray-70000"
-            onClick={() =>
-              openLinkInNewTab("https://instagram.com/")
-            }
-          />
-          <FaTwitter
-            className="text-xl cursor-pointer text-white-950 hover:text-gray-70000"
-            onClick={() =>
-              openLinkInNewTab("https://twitter.com/")
-            }
-          />
-          <FaWhatsapp
-            className="text-xl cursor-pointer text-white-950 hover:text-gray-70000"
-            onClick={() =>
-              openLinkInNewTab("https://whatsapp.com/")
-            }
+            <FaFacebook
+              className="text-xl cursor-pointer text-white-950 hover:text-gray-70000"
+              onClick={() =>
+                openLinkInNewTab("https://www.facebook.com/blessing.akinlabi.7?mibextid=LQQJ4d/")
+              }
             />
-            </div>
+            <FaInstagram
+              className="text-xl cursor-pointer text-white-950 hover:text-gray-70000"
+              onClick={() =>
+                openLinkInNewTab("https://www.instagram.com/cabash_treats?igsh=YTQwZjQ0NmI0OA==/")
+              }
+            />
+            <FaTwitter
+              className="text-xl cursor-pointer text-white-950 hover:text-gray-70000"
+              onClick={() =>
+                openLinkInNewTab("https://twitter.com/")
+              }
+            />
+            <FaWhatsapp
+              className="text-xl cursor-pointer text-white-950 hover:text-gray-70000"
+              onClick={() =>
+                openLinkInNewTab("https://wa.me/message/T4QZHWSV5MBXL1/")
+              }
+            />
+          </div>
         </div>
       </div>
       <div className="bg-gray-950 text-center py-3">
