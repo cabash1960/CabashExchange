@@ -11,7 +11,7 @@ const Footer = () => {
 
   return (
     <footer className="bg-slate-800 text-white">
-      <div className="container mx-5 grid lg:grid-cols-5 gap-3 items-center py-8">
+      <div className="container lg:mx-10 mx-5 grid lg:grid-cols-5 gap-3 items-center py-8">
         <div className="flex col-span-2 items-start flex-col gap-4">
           <img src={logoC} alt="CABASH Logo" className="h-8" />
           <p className="text-sm text-slate-400">
@@ -19,7 +19,7 @@ const Footer = () => {
             multiple currencies easily, safely and securely.
           </p>
         </div>
-        <div className="flex col-span-2 flex-col items-center  gap-2">
+        <div className="flex col-span-2 flex-col lg:items-center text-start  gap-2">
           <h3 className="font-medium text-slate-300">Quick Links</h3>
           <ScrollLink
             to="products"
