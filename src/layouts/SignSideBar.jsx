@@ -6,7 +6,7 @@ const SignSideBar = () => {
     <div className="bg-gray-800 h-screen pt-10">
       <img src={logoC} alt="logo" className="w-44 px-4" />
       <div className="flex justify-center mt-[-40px] lg:w-full w-80">
-        <script
+         <script
           src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs"
           type="module"
         ></script>
