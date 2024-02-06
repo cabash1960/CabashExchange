@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link as ScrollLink } from "react-scroll";
 import Button from "./Button";
-import logoC from "../assets/logoC.png";
+import logo from "../assets/logo.png";
 import { FaBars, FaTimes } from "react-icons/fa";
 
 const Navbar = () => {
@@ -56,7 +56,7 @@ const Navbar = () => {
       } p-4 sticky top-0 z-50`}
     >
       <div className="container mx-auto flex justify-between items-center">
-        <img src={logoC} alt="logo" className="lg:w-40 w-32" />
+        <img src={logo} alt="logo" className="lg:w-40 w-32" />
         {/* Responsive Hamburger Menu */}
         <div className="lg:hidden">
           <button

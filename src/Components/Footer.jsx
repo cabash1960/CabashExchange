@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { Link as ScrollLink } from "react-scroll";
 import { FaFacebook, FaInstagram, FaTwitter, FaWhatsapp } from "react-icons/fa";
-import logoC from "../assets/logoc.png";
+import logo from "../assets/logo.png";
 
 const Footer = () => {
   const openLinkInNewTab = (url) => {
@@ -13,7 +13,7 @@ const Footer = () => {
     <footer className="bg-slate-800 text-white">
       <div className="container lg:mx-10 mx-5 grid lg:grid-cols-5 gap-3 items-center py-8">
         <div className="flex col-span-2 items-start flex-col gap-4">
-          <img src={logoC} alt="CABASH Logo" className="h-8" />
+          <img src={logo} alt="CABASH Logo" className="h-8" />
           <p className="text-sm text-slate-400">
             CABASH, a secured online payment gateway that allows payment in
             multiple currencies easily, safely and securely.
