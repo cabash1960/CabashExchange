@@ -1,5 +1,3 @@
-// TransactionPage.js
-
 import React, { useState } from "react";
 
 const Transaction = () => {
@@ -40,19 +38,16 @@ const Transaction = () => {
   };
 
   return (
-    <div className="container mx-10 mt-8">
+    <div className="max-w-[70%] p-8">
       <h2 className="text-2xl font-bold mb-4">Make a Transaction</h2>
-      <form onSubmit={handleSubmit} className="max-w-[70%]">
-        <div className="mb-4">
-          <label
-            htmlFor="fromCurrency"
-            className="block text-sm font-medium text-gray-700"
-          >
+      <form onSubmit={handleSubmit} className="space-y-4">
+        <div>
+          <label htmlFor="fromCurrency" className="block text-gray-700 mb-1">
             Currency From
           </label>
           <select
             id="fromCurrency"
-            className="mt-1 p-2 border border-gray-300 rounded-md w-full"
+            className="block w-full bg-slate-200 px-4 py-2 border rounded-lg focus:outline-none focus:border-blue-500"
             value={fromCurrency}
             onChange={handleFromCurrencyChange}
           >
@@ -64,16 +59,13 @@ const Transaction = () => {
             <option value="EGP">Egypt (EGP)</option>
           </select>
         </div>
-        <div className="mb-4">
-          <label
-            htmlFor="toCurrency"
-            className="block text-sm font-medium text-gray-700"
-          >
-            Currency To 
+        <div>
+          <label htmlFor="toCurrency" className="block text-gray-700 mb-1">
+            Currency To
           </label>
           <select
             id="toCurrency"
-            className="mt-1 p-2 border border-gray-300 rounded-md w-full"
+            className="block w-full bg-slate-200 px-4 py-2 border rounded-lg focus:outline-none focus:border-blue-500"
             value={toCurrency}
             onChange={handleToCurrencyChange}
           >
@@ -85,68 +77,56 @@ const Transaction = () => {
             <option value="EGP">Egypt (EGP)</option>
           </select>
         </div>
-        <div className="mb-4">
-          <label
-            htmlFor="receiverAccount"
-            className="block text-sm font-medium text-gray-700"
-          >
+        <div>
+          <label htmlFor="receiverAccount" className="block text-gray-700 mb-1">
             Receiver Account Number
           </label>
           <input
             type="text"
             id="receiverAccount"
-            className="mt-1 p-2 border border-gray-300 rounded-md w-full"
             value={receiverAccount}
             onChange={handleReceiverAccountChange}
+            className="block w-full bg-slate-200 px-4 py-2 border rounded-lg focus:outline-none focus:border-blue-500"
           />
         </div>
-        <div className="mb-4">
-          <label
-            htmlFor="receiverBank"
-            className="block text-sm font-medium text-gray-700"
-          >
+        <div>
+          <label htmlFor="receiverBank" className="block text-gray-700 mb-1">
             Receiver Bank
           </label>
           <input
             type="text"
             id="receiverBank"
-            className="mt-1 p-2 border border-gray-300 rounded-md w-full"
             value={receiverBank}
             onChange={handleReceiverBankChange}
+            className="block w-full bg-slate-200 px-4 py-2 border rounded-lg focus:outline-none focus:border-blue-500"
           />
         </div>
-        <div className="mb-4">
-          <label
-            htmlFor="amount"
-            className="block text-sm font-medium text-gray-700"
-          >
+        <div>
+          <label htmlFor="amount" className="block text-gray-700 mb-1">
             Amount
           </label>
           <input
             type="number"
             id="amount"
-            className="mt-1 p-2 border border-gray-300 rounded-md w-full"
             value={amount}
             onChange={handleAmountChange}
+            className="block w-full bg-slate-200 px-4 py-2 border rounded-lg focus:outline-none focus:border-blue-500"
           />
         </div>
-        <div className="mb-4">
-          <label
-            htmlFor="description"
-            className="block text-sm font-medium text-gray-700"
-          >
+        <div>
+          <label htmlFor="description" className="block text-gray-700 mb-1">
             Description
           </label>
           <textarea
             id="description"
-            className="mt-1 p-2 border border-gray-300 rounded-md w-full"
             value={description}
             onChange={handleDescriptionChange}
+            className="block w-full bg-slate-200 px-4 py-2 border rounded-lg focus:outline-none focus:border-blue-500"
           ></textarea>
         </div>
         <button
           type="submit"
-          className="bg-blue-500 text-white py-2 px-4 rounded-md"
+          className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
         >
           Submit
         </button>
