@@ -4,6 +4,12 @@ import NonAuthLayout from './layouts/NonAuthLayout'
 import LandingPage from './pages/LandingPage'
 import SignUpForm from './Components/SignUpForm'
 import SignInForm from './Components/SignInForm'
+import DashboardLayout from './layouts/DasboardLayout'
+import User from './Components/User'
+import Settings from './Components/Settings'
+import Dashboard from './Components/Dashboard'
+import Transaction from './Components/Transaction'
+import TransactionHistory from './Components/TransactionHistory'
 
 const App = () => {
   return (
@@ -19,6 +25,37 @@ const App = () => {
         />
         <Route path="/SignUpForm" element={<SignUpForm />} />
         <Route path="/SignInForm" element={<SignInForm />} />
+
+        <Route path="/Dashboard" element={
+          <DashboardLayout>
+            <Dashboard/>
+          </DashboardLayout>
+        }
+        />
+        <Route path="/Transaction" element={
+          <DashboardLayout>
+            <Transaction/>
+          </DashboardLayout>
+        }
+        />
+            <Route path="/User" element={
+              <DashboardLayout>
+                <User/>
+              </DashboardLayout>
+            }
+            />
+        <Route path="/TransactionHistory" element={
+          <DashboardLayout>
+            <TransactionHistory/>
+          </DashboardLayout>
+        }
+        />
+        <Route path="/Settings" element={
+          <DashboardLayout>
+            <Settings/>
+          </DashboardLayout>
+        }
+        />
       </Routes>
     </React.Fragment>
   );

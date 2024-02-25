@@ -8,7 +8,8 @@ const SignUpForm = () => {
   const navigate = useNavigate();
 
   const [formData, setFormData] = useState({
-    username: "",
+    firstName: "",
+    lastName: "",
     email: "",
     password: "",
     confirmPassword: "",
@@ -38,8 +39,12 @@ const SignUpForm = () => {
   const validateForm = (data) => {
     let errors = {};
 
-    if (!data.username.trim()) {
-      errors.username = "Username is required";
+    if (!data.firstName.trim()) {
+      errors.firstname = "firstname is required";
+    }
+
+    if (!data.lastName.trim()) {
+      errors.lastname = "lastname is required";
     }
 
     if (!data.email.trim()) {
@@ -76,13 +81,24 @@ const SignUpForm = () => {
           <h2 className="text-2xl font-semibold mb-4 text-slate-200">Sign Up</h2>
           <form onSubmit={handleSubmit}>
             <FormInput
-              label="Username"
+              label="firstName"
               type="text"
-              id="username"
-              name="username"
-              value={formData.username}
+              id="firstName"
+              name="firstName"
+              value={formData.firstName}
               onChange={handleInputChange}
-              error={errors.username}
+              error={errors.firstName}
+            />
+
+
+            <FormInput
+              label="lastName"
+              type="text"
+              id="lastName"
+              name="lastName"
+              value={formData.lastName}
+              onChange={handleInputChange}
+              error={errors.lastName}
             />
 
             <FormInput
