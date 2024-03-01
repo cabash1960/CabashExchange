@@ -12,6 +12,8 @@ const currencies = [
   { code: "ZAR", name: "SA Rand" },
   { code: "KES", name: "Shilling" },
   { code: "EGP", name: "Pound" },
+  { code: "USD", name: "Dollar" },
+  { code: "CFA", name: "Cefa" },
   // Add more African currencies here
 ];
 

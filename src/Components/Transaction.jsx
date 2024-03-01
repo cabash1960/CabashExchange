@@ -38,7 +38,7 @@ const Transaction = () => {
   };
 
   return (
-    <div className="max-w-[70%] p-8">
+    <div className="lg:max-w-[70%] p-8">
       <h2 className="text-2xl font-bold mb-4">Make a Transaction</h2>
       <form onSubmit={handleSubmit} className="space-y-4">
         <div>
@@ -53,6 +53,8 @@ const Transaction = () => {
           >
             <option value="">Select Country</option>
             <option value="NGN">Nigeria (NGN)</option>
+            <option value="USD">USA (USD)</option>
+            <option value="CFA">Benin (CFA)</option>
             <option value="ZAR">South Africa (ZAR)</option>
             <option value="KES">Kenya (KES)</option>
             <option value="GHS">Ghana (GHS)</option>
@@ -71,6 +73,8 @@ const Transaction = () => {
           >
             <option value="">Select Country</option>
             <option value="NGN">Nigeria (NGN)</option>
+            <option value="USD">USA (USD)</option>
+            <option value="CFA">Benin (CFA)</option>
             <option value="ZAR">South Africa (ZAR)</option>
             <option value="KES">Kenya (KES)</option>
             <option value="GHS">Ghana (GHS)</option>

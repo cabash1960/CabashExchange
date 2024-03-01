@@ -23,7 +23,7 @@ const Dashboard = () => {
   const currencyChartData = {
     series: [
       { name: "NGN", data: [100, 200, 150, 300, 250] },
-      { name: "GHS", data: [120, 180, 140, 280, 220] },
+      { name: "USD", data: [120, 180, 140, 280, 220] },
       // Add more currencies here
     ],
     options: {

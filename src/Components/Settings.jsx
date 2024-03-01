@@ -22,7 +22,7 @@ const Settings = () => {
   };
 
   return (
-    <div className="max-w-[70%] p-8">
+    <div className="lg:max-w-[70%] p-8">
       <h2 className="text-2xl font-semibold mb-4">Settings</h2>
       <div className="space-y-4">
         <div>

@@ -1,73 +1,79 @@
-import React from "react";
+import React, { useState } from "react";
 import { FaHome, FaUserCircle } from "react-icons/fa";
 import { BiHistory } from "react-icons/bi";
-import {  RiArrowUpDownLine, RiSettings5Fill } from 'react-icons/ri';
+import { RiArrowUpDownLine, RiSettings5Fill } from "react-icons/ri";
 import { Link } from "react-router-dom";
 
 function Sidebar() {
- 
+  const [sidebarOpen, setSidebarOpen] = useState(false);
+
   return (
     <>
-      <div className="fixed left-0 top-0 w-64 h-full bg-slate-300 p-4 z-50 sidebar-menu transition-transform">
-        <Link
-          to="#"
-          className="flex items-center pb-4 border-b border-b-gray-800"
+      <div
+        className={`relative bg-slate-200 h-screen p-5 transition-all duration-300 flex flex-col text-md font-semibold ${
+          sidebarOpen ? "w-72" : "w-12"
+        }`}
+      >
+        <button
+          onClick={() => setSidebarOpen(!sidebarOpen)}
+          className="absolute -right-3 top-9 cursor-pointer rounded-full border-2 border-black bg-white p-1"
         >
-          <h2 className="font-bold flex justify-center items-center text-2xl">
-            CABASH
-            <span className="bg-slate-800 text-lg text-white px-2 pb-1 rounded-md">
-              Exchange
-            </span>
-          </h2>
-        </Link>
-        <ul className="mt-10">
-          <span className="text-gray-400 text-lg font-bold">Main</span>
-          <li className="mb-4 group">
+          {/* SVG icon */}
+          <RiArrowUpDownLine
+            className={`h-6 w-6 transform transition-transform duration-300 ${
+              sidebarOpen ? "rotate-270" : "rotate-90"
+            }`}
+          />
+        </button>
+      
+        <ul className="flex flex-col space-y-1 overflow-y-auto overflow-x-hidden scrollbar">
+          {/* Main menu items */}
+          <span className="text-gray-400 font-bold">Main</span>
+          <li className="group">
             <Link
               to="/Dashboard"
-              className="flex  gap-2 font-semibold items-center py-2 px-4 text-gray-900 hover:bg-gray-950 hover:text-gray-100 rounded-md group-[.active]:bg-gray-800 group-[.active]:text-white group-[.selected]:bg-gray-950 group-[.selected]:text-gray-100"
+              className="flex items-center space-x-2 py-2 px-4 rounded-md text-black hover:bg-sky-300 transition-colors duration-300"
             >
-              <FaHome className="text-xl" />
-              <span className="text-md">Dashboard</span>
+              <FaHome />
+              <span>Dashboard</span>
             </Link>
           </li>
-          <li className="mb-4 group">
+          <li className="group">
             <Link
               to="/Transaction"
-              className="flex  gap-2 font-semibold items-center py-2 px-4 text-gray-900 hover:bg-gray-950 hover:text-gray-100 rounded-md group-[.active]:bg-gray-800 group-[.active]:text-white group-[.selected]:bg-gray-950 group-[.selected]:text-gray-100"
+              className="flex items-center space-x-2 py-2 px-4 rounded-md text-black hover:bg-sky-300 transition-colors duration-300"
             >
-              <RiArrowUpDownLine className="text-xl"/>
-              <span className="text-md">Transaction</span>
+              <RiArrowUpDownLine />
+              <span>Transactions</span>
             </Link>
           </li>
-
-          <span className="text-gray-400 font-bold">PERSONAL</span>
-
-          <li className="mb-1 group">
+          {/* Personal menu items */}
+          <span className="text-gray-400 font-bold">Personal</span>
+          <li className="group">
             <Link
               to="/User"
-              className="flex gap-2 font-semibold items-center py-2 px-4 text-gray-900 hover:bg-gray-950 hover:text-gray-100 rounded-md group-[.active]:bg-gray-800 group-[.active]:text-white group-[.selected]:bg-gray-950 group-[.selected]:text-gray-100"
+              className="flex items-center space-x-2 py-2 px-4 rounded-md text-black hover:bg-sky-300 transition-colors duration-300"
             >
-              <FaUserCircle className="text-xl" />
-              <span className="text-md">Personal Information</span>
+              <FaUserCircle />
+              <span>Personal Information</span>
             </Link>
           </li>
-          <li className="mb-1 group">
+          <li className="group">
             <Link
               to="/TransactionHistory"
-              className="flex gap-2 font-semibold items-center py-2 px-4 text-gray-900 hover:bg-gray-950 hover:text-gray-100 rounded-md group-[.active]:bg-gray-800 group-[.active]:text-white group-[.selected]:bg-gray-950 group-[.selected]:text-gray-100"
+              className="flex items-center space-x-2 py-2 px-4 rounded-md text-black hover:bg-sky-300 transition-colors duration-300"
             >
-              <BiHistory className="text-xl" />
-              <span className="text-md">Transaction History</span>
+              <BiHistory />
+              <span>Transaction History</span>
             </Link>
           </li>
-          <li className="mb-1 group">
+          <li className="group">
             <Link
               to="/Settings"
-              className="flex gap-1.5 font-semibold items-center py-2 px-4 text-gray-900 hover:bg-gray-950 hover:text-gray-100 rounded-md group-[.active]:bg-gray-800 group-[.active]:text-white group-[.selected]:bg-gray-950 group-[.selected]:text-gray-100 sidebar-dropdown-toggle"
+              className="flex items-center space-x-2 py-2 px-4 rounded-md text-black hover:bg-sky-300 transition-colors duration-300"
             >
-              <RiSettings5Fill className="text-2xl" />
-              <span className="text-md">Settings</span>
+              <RiSettings5Fill />
+              <span>Settings</span>
             </Link>
           </li>
         </ul>

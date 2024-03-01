@@ -20,8 +20,8 @@ const TransactionHistory = () => {
   ]);
 
   return (
-    <div className="container mx-auto mt-8">
-      <h2 className="text-2xl font-bold mb-4">
+    <div className="lg:mx-8 mt-8 mx-4">
+      <h2 className="lg:text-2xl text-xl font-bold mb-4">
         Transaction History
       </h2>
       <div className="overflow-x-auto">

@@ -26,7 +26,7 @@ const User = () => {
   };
 
   return (
-    <div className="max-w-[70%] p-8">
+    <div className="lg:max-w-[70%] p-8">
       <h2 className="text-2xl font-semibold mb-4">Personal Information</h2>
       <form onSubmit={handleSubmit} className="space-y-4">
         <div>
