@@ -49,21 +49,8 @@ const SignInForm = () => {
     return errors;
   };
 
-  const handleSignUpClick = () => {
-    navigate("/SignUpForm");
-  };
-
-  const handleForgotPasswordClick = () => {
-    setShowForgotPasswordPopup(true);
-  };
-
-  const handleCloseForgotPasswordPopup = () => {
-    setShowForgotPasswordPopup(false);
-  };
-
-  const handleForgotPasswordSubmit = () => {
-    handleCloseForgotPasswordPopup();
-  };
+ 
+  
 
   return (
     <div className="grid lg:grid-cols-2 bg-gray-900 h-screen">
@@ -104,51 +91,9 @@ const SignInForm = () => {
               </span>
             </p>
           </div>
-          <div className="">
-            <p className="text-slate-300">
-              Forgot Password? &nbsp;
-              <span
-                className="text-orange-400 cursor-pointer"
-                onClick={handleForgotPasswordClick}
-              >
-             Reset here
-              </span>
-            </p>
-          </div>
+          
         </div>
       </div>
-
-      {showForgotPasswordPopup && (
-        <div className="fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 flex items-center justify-center">
-          <div className="bg-gray-600 p-6 rounded shadow-md">
-            <h2 className="text-2xl font-semibold mb-4 text-slate-300">Forgot Password</h2>
-            <form onSubmit={handleForgotPasswordSubmit}>
-              <FormInput
-                label="Email"
-                type="email"
-                id="forgotEmail"
-                name="forgotEmail"
-                value={formData.email}
-                onChange={handleInputChange}
-                error={errors.email}
-              />
-              <Button
-                text="Submit"
-                onClick={handleForgotPasswordSubmit}
-                variant="success"
-              />
-            </form>
-            <div className="mt-4">
-              <p
-                className="text-orange-400 cursor-pointer"
-                onClick={handleCloseForgotPasswordPopup}
-              >
-                Close
-              </p>
-            </div>
-          </div>
-        </div>
-      )}
     </div>
   );
 };
