@@ -3,6 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import Button from "./Button";
 import FormInput from "./FormInput";
 import SignSideBar from "../layouts/SignSideBar";
+import axios from "axios";
 
 const SignInForm = () => {
   const navigate = useNavigate();
@@ -11,6 +12,20 @@ const SignInForm = () => {
     email: "",
     password: "",
   });
+  const signIn = async (credentials) => {
+    try {
+      const response = await axios.post(
+        "https://mimi-ihak.onrender.com/api/v1/accounts/sign-in",
+        credentials
+      );
+      const getData = response.data;
+      console.log(">>>> " + JSON.stringify(getData));
+
+      // return getData.message;
+    } catch (error) {
+      console.log("Error " + JSON.stringify(error));
+    }
+  };
 
   const [errors, setErrors] = useState({});
   const [showForgotPasswordPopup, setShowForgotPasswordPopup] = useState(false);
@@ -31,6 +46,7 @@ const SignInForm = () => {
     if (Object.keys(validationErrors).length === 0) {
       navigate("/dashboard");
     }
+    var result = signIn(formData);
   };
 
   const validateForm = (data) => {
@@ -97,9 +113,7 @@ const SignInForm = () => {
           <div className="mt-4">
             <p className="text-slate-300">
               Don't have an account? &nbsp;
-              <span
-                className="text-orange-400 cursor-pointer"
-              >
+              <span className="text-orange-400 cursor-pointer">
                 <Link to="/SignUpForm">Sign Up</Link>
               </span>
             </p>
@@ -107,11 +121,8 @@ const SignInForm = () => {
           <div className="">
             <p className="text-slate-300">
               Forgot Password? &nbsp;
-              <span
-                className="text-orange-400 cursor-pointer"
-                onClick={handleForgotPasswordClick}
-              >
-             Reset here
+              <span className="text-orange-400 cursor-pointer" onClick={handleForgotPasswordClick}>
+                Reset here
               </span>
             </p>
           </div>
@@ -132,11 +143,7 @@ const SignInForm = () => {
                 onChange={handleInputChange}
                 error={errors.email}
               />
-              <Button
-                text="Submit"
-                onClick={handleForgotPasswordSubmit}
-                variant="success"
-              />
+              <Button text="Submit" onClick={handleForgotPasswordSubmit} variant="success" />
             </form>
             <div className="mt-4">
               <p
