@@ -23,7 +23,7 @@ const SignInForm = () => {
 
       // return getData.message;
     } catch (error) {
-      console.log("Error " + JSON.stringify(error));
+      console.log("Error " + error);
     }
   };
 
