@@ -6,8 +6,9 @@ import {
 } from "react-icons/ri";
 import { FaExclamationTriangle } from "react-icons/fa";
 import MainCard from "./MainCard";
-import Chart from "react-apexcharts";
-import CurrencyConverter from "./Conversion";
+import Conversion from "../Components/Conversion";
+import Converter from "./Currency/Converter";
+import CurrencyProvider from "../context/CurrencyContext";
 
 const Dashboard = () => {
   const [isUnavailableClicked, setIsUnavailableClicked] = useState(false);
@@ -67,16 +68,10 @@ const Dashboard = () => {
       </div>
 
       <div className="grid lg:grid-cols-2 gap-12 mt-12">
-        <CurrencyConverter />
-        <div className="bg-white rounded-md p-4">
-          <h2 className="text-xl font-semibold mb-4">Currency Chart</h2>
-          <Chart
-            options={currencyChartData.options}
-            series={currencyChartData.series}
-            type="line"
-            height={300}
-          />
-        </div>
+        <CurrencyProvider>
+        <Converter />
+        </CurrencyProvider>
+          <Conversion/>
       </div>
 
       {isUnavailableClicked && (

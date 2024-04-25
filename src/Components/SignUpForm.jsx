@@ -49,7 +49,7 @@ const SignUpForm = () => {
 
     if (Object.keys(validationErrors).length === 0) {
       console.log("Form Values:", formData);
-      navigate("/SigninForm");
+      navigate("/SignInForm");
     }
 
     var result = SignUP(formData);
@@ -100,7 +100,7 @@ const SignUpForm = () => {
           <h2 className="text-2xl font-semibold mb-4 text-slate-200">Sign Up</h2>
           <form onSubmit={handleSubmit}>
             <FormInput
-              label="first_name"
+              label="FirstName"
               type="text"
               id="first_name"
               name="first_name"
@@ -110,7 +110,7 @@ const SignUpForm = () => {
             />
 
             <FormInput
-              label="lastName"
+              label="LastName"
               type="text"
               id="last_name"
               name="last_name"

@@ -28,7 +28,6 @@ const SignInForm = () => {
   };
 
   const [errors, setErrors] = useState({});
-  const [showForgotPasswordPopup, setShowForgotPasswordPopup] = useState(false);
 
   const handleInputChange = (e) => {
     setFormData({
@@ -44,7 +43,7 @@ const SignInForm = () => {
     setErrors(validationErrors);
 
     if (Object.keys(validationErrors).length === 0) {
-      navigate("/dashboard");
+      navigate("/Dashboard");
     }
     var result = signIn(formData);
   };
