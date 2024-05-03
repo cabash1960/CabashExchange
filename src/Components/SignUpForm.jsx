@@ -15,9 +15,9 @@ const SignUpForm = () => {
     password: "",
     username: "",
   });
-  // console.log(JSON.stringify(formData));
 
   const [errors, setErrors] = useState({});
+  const [showModal, setShowModal] = useState(false); // State for showing modal
 
   const handleInputChange = (e) => {
     setFormData({
@@ -35,7 +35,8 @@ const SignUpForm = () => {
       const getData = response.data;
       console.log(">>>> " + JSON.stringify(getData));
 
-      // return getData.message;
+      // Show modal on successful registration
+      setShowModal(true);
     } catch (error) {
       console.log("Error " + JSON.stringify(error));
     }
@@ -49,10 +50,8 @@ const SignUpForm = () => {
 
     if (Object.keys(validationErrors).length === 0) {
       console.log("Form Values:", formData);
-      navigate("/SignInForm");
+      var result = SignUP(formData);
     }
-
-    var result = SignUP(formData);
   };
 
   const validateForm = (data) => {
@@ -74,6 +73,9 @@ const SignUpForm = () => {
 
     if (!data.password) {
       errors.password = "Password is required";
+    } else if (!/(?=.*\d)(?=.*[a-zA-Z])(?=.*\W)/.test(data.password)) {
+      errors.password =
+        "Password must contain at least one letter, one number, and one special character";
     } else if (data.password.length < 6) {
       errors.password = "Password must be at least 6 characters";
     }
@@ -85,9 +87,11 @@ const SignUpForm = () => {
     return errors;
   };
 
-  const handleSignUpClick = () => {
-    // Navigate to the Sign Up page
-    navigate("/SignInForm");
+  const closeModal = () => {
+    // Close the modal
+    setShowModal(false);
+    // Navigate to the dashboard
+    navigate("/dashboard");
   };
 
   return (
@@ -97,10 +101,12 @@ const SignUpForm = () => {
       </div>
       <div className="lg:col-span-1 mt-8 self-center">
         <div className="p-10 max-w-lg">
-          <h2 className="text-2xl font-semibold mb-4 text-slate-200">Sign Up</h2>
+          <h2 className="text-2xl font-semibold mb-4 text-slate-200">
+            Sign Up
+          </h2>
           <form onSubmit={handleSubmit}>
             <FormInput
-              label="FirstName"
+              label="First Name"
               type="text"
               id="first_name"
               name="first_name"
@@ -110,7 +116,7 @@ const SignUpForm = () => {
             />
 
             <FormInput
-              label="LastName"
+              label="Last Name"
               type="text"
               id="last_name"
               name="last_name"
@@ -141,7 +147,7 @@ const SignUpForm = () => {
 
             <FormInput
               label="Username"
-              type="name"
+              type="text"
               id="username"
               name="username"
               value={formData.username}
@@ -155,13 +161,29 @@ const SignUpForm = () => {
           <div className="mt-4 text-slate-300">
             <p>
               Already have an account? &nbsp;
-              <span className="text-orange-400 cursor-pointer" onClick={handleSignUpClick}>
+              <span
+                className="text-orange-400 cursor-pointer"
+                onClick={() => navigate("/SignInForm")}
+              >
                 Sign In
               </span>
             </p>
           </div>
         </div>
       </div>
+      {/* Modal */}
+      {showModal && (
+        <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
+          <div className="bg-white p-8 rounded-lg">
+            <p className="text-lg mb-4">Registration Successful!</p>
+            <Button
+              text="Continue to Dashboard"
+              onClick={closeModal}
+              variant="success"
+            />
+          </div>
+        </div>
+      )}
     </div>
   );
 };

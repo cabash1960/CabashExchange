@@ -12,22 +12,9 @@ const SignInForm = () => {
     email: "",
     password: "",
   });
-  const signIn = async (credentials) => {
-    try {
-      const response = await axios.post(
-        "https://mimi-ihak.onrender.com/api/v1/accounts/sign-in",
-        credentials
-      );
-      const getData = response.data;
-      console.log(">>>> " + JSON.stringify(getData));
-
-      // return getData.message;
-    } catch (error) {
-      console.log("Error " + error);
-    }
-  };
 
   const [errors, setErrors] = useState({});
+  const [signInError, setSignInError] = useState(null);
 
   const handleInputChange = (e) => {
     setFormData({
@@ -36,16 +23,34 @@ const SignInForm = () => {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+    console.log("Form submitted");
 
     const validationErrors = validateForm(formData);
     setErrors(validationErrors);
 
     if (Object.keys(validationErrors).length === 0) {
-      navigate("/Dashboard");
+      try {
+        const response = await signIn(formData);
+        console.log("Sign-in response:", response);
+        if (response.success) {
+          console.log("Sign-in successful, navigating to dashboard");
+          navigate("/Dashboard");
+        } else {
+          console.log("Sign-in unsuccessful, displaying error message");
+          if (response.error === "invalid_credentials") {
+            setSignInError("Invalid email or password");
+          } else {
+            console.error(response.error);
+            setSignInError("An error occurred during sign-in");
+          }
+        }
+      } catch (error) {
+        console.error("Error signing in:", error);
+        setSignInError("An error occurred during sign-in");
+      }
     }
-    var result = signIn(formData);
   };
 
   const validateForm = (data) => {
@@ -64,14 +69,33 @@ const SignInForm = () => {
     return errors;
   };
 
+  const signIn = async (data) => {
+    try {
+      const response = await axios.post(
+        "https://mimi-ihak.onrender.com/api/v1/accounts/sign-in",
+        {
+          email: data.email,
+          password: data.password,
+        }
+      );
+      return response.data;
+    } catch (error) {
+      console.error("Error signing in:", error);
+      throw error;
+    }
+  };
+
   return (
     <div className="grid lg:grid-cols-2 bg-gray-900 h-screen">
-      <div className="hidden lg:block ">
+      <div className="hidden lg:block">
         <SignSideBar />
       </div>
-      <div className="lg:col-span-1 mt-8 self-center ">
+      <div className="lg:col-span-1 mt-8 self-center">
         <div className="p-10 max-w-lg">
-          <h2 className="text-2xl font-semibold mb-4 text-slate-200">Sign In</h2>
+          <h2 className="text-2xl font-semibold mb-4 text-slate-200">
+            Sign In
+          </h2>
+          {signInError && <p className="text-red-500 mb-4">{signInError}</p>}{" "}
           <form onSubmit={handleSubmit}>
             <FormInput
               label="Email"
@@ -91,7 +115,8 @@ const SignInForm = () => {
               onChange={handleInputChange}
               error={errors.password}
             />
-            <Button text="Sign In" onClick={handleSubmit} variant="success" />
+            <Button text="Sign In" type="submit" variant="success" />{" "}
+            {/* Ensure type="submit" to trigger form submission */}
           </form>
           <div className="mt-4">
             <p className="text-slate-300">
