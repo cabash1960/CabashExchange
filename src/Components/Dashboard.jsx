@@ -9,6 +9,7 @@ import MainCard from "./MainCard";
 import Conversion from "../Components/Conversion";
 import Converter from "./Currency/Converter";
 import CurrencyProvider from "../context/CurrencyContext";
+import WalletBalance from "./Currency/WalletBalance";
 
 const Dashboard = () => {
   const [isUnavailableClicked, setIsUnavailableClicked] = useState(false);
@@ -65,6 +66,13 @@ const Dashboard = () => {
           color="bg-orange-500 text-white"
           onClick={handleMainCardClick}
         />
+      </div>
+  
+      <div>
+        <div className=" mt-20"
+        >
+          <WalletBalance/>
+        </div>
       </div>
 
       <div className="grid lg:grid-cols-2 gap-12 mt-12">
